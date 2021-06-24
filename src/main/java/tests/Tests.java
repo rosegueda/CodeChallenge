@@ -49,7 +49,8 @@ WebDriver driver;
         WebDriverWait wait = new WebDriverWait(driver,10);
         wait.until(ExpectedConditions.elementToBeClickable(page.getCloseLayerCart()));
         WebElement closeLayerCart = driver.findElement(page.getCloseLayerCart());
-        closeLayerCart.click();
+        //closeLayerCart.click();
+
         //driver.findElement(By.xpath("//*[@class='shopping_cart']//*[text()='Cart']")).click();
 //        WebElement shoppingCart = driver.findElement(page.getCloseLayerCart());
 //        shoppingCart.click();
