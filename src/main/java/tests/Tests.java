@@ -85,12 +85,15 @@ WebDriver driver;
 
         WebElement addToChartfadedSSTSImage = driver.findElement(page.getAddToCartfadedSSTSImage());
         Actions action = new Actions(driver);
-        action.moveByOffset(78,75).perform();
+        action.moveToElement(fadedSSTSImage).perform();
         addToChartfadedSSTSImage.click();
+
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebElement closeLayerCart = driver.findElement(page.getCloseLayerCart());
         closeLayerCart.click();
+
         Thread.sleep(3000);
+
         js.executeScript("window.scrollBy(0,-1000)");
         WebElement shoppingCart = driver.findElement(page.getShoppingCart());
         //shoppingCart.click();

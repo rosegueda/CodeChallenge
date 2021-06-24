@@ -1,9 +1,10 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 public class ObjectsAutomationPracticeMain {
-
+    private WebDriver driver;
     private By searchBar = By.id("search_query_top");
     private By searchBtn = By.name("submit_search");
     private By womenCategory = By.xpath("//a[@title='Women']");
@@ -98,5 +99,12 @@ public class ObjectsAutomationPracticeMain {
 
     public By getFooterSections() {
         return footerSections;
+    }
+    public void click(By locator) {
+        driver.findElement(locator).click();
+    }
+
+    public void SearchItem (){
+
     }
 }
