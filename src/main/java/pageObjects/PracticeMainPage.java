@@ -99,9 +99,9 @@ public class PracticeMainPage extends Base{
             {
                 System.out.println("- "+el.getAttribute("title"));
             }} else {
-                WebElement alertText = driver.findElement(By.xpath("//*[@class='alert alert-warning']"));
-                System.out.println("Message for 0 result: "+alertText.getText());
-                //System.out.println("Message for 0 result: "+alertTextNoResults.getText());
+//                WebElement alertText = driver.findElement(By.xpath("//*[@class='alert alert-warning']"));
+//                System.out.println("Message for 0 result: "+alertText.getText());
+                System.out.println("Message for 0 result: "+findElement(alertTextNoResults).getText());
             }
             return searchResult.size();
         }
