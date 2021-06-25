@@ -41,12 +41,11 @@ public class TestsPracticePage {
         System.out.println(pmp.cartItemsAddedText());
     }
     @Test (priority = 1)
-    public void Remove_item_inside_shopping_cart() throws InterruptedException {
+    public void Remove_item_inside_shopping_cart(){
         PracticeMainPage pmp = new PracticeMainPage(driver);
         pmp.selectItemfadedSSTS();
         pmp.closeAndValidateItemAdded();
         pmp.removeItemFromCart();
-        Thread.sleep(5000);
         Assert.assertEquals(pmp.cartItemsAddedText(),"Cart (empty)","Failed Test");
         System.out.println(pmp.cartItemsAddedText());
     }

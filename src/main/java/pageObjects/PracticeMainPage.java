@@ -56,9 +56,13 @@ public class PracticeMainPage extends Base{
         }
         public void removeItemFromCart(){
             Actions action = new Actions(driver);
+            String itemText = cartItemsAddedText();
             action.moveToElement(findElement(shoppingCart)).build().perform();
+            WebDriverWait wait = new WebDriverWait(driver,10);
             findElement(removeItemCart);
             click(removeItemCart);
+            wait.until(ExpectedConditions.not(ExpectedConditions.
+                    textToBe(textCart,itemText)));
         }
         public void selectRandomItem(){
             List<WebElement> el = findElements(itemsElements);
