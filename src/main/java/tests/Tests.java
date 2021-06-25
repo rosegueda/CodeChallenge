@@ -67,7 +67,7 @@ WebDriver driver;
 //        System.out.println(textCart.getText());
 //        WebElement TxtBoxContent = driver.findElement(By.className("shopping_cart"));
 //        System.out.println("Printing " + TxtBoxContent.getAttribute("value"));
-//        System.out.println("Page title is : " + driver.getTitle());
+//        System.out.println("Page title is : " + driver.getTitle());eq
 //        List<WebElement> ele = driver.findElements(By.tagName("frame"));
 //        System.out.println("Number of frames in a page :" + ele.size());
 //        for(WebElement el : ele){
@@ -156,7 +156,7 @@ WebDriver driver;
         WebElement searchBtn = driver.findElement(page.getSearchBtn());
         searchBtn.click();
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
         List<WebElement> searchResult = driver.findElements(page.getItemsElementsAfterSearch());
         System.out.println("Number of Items search result: " + searchResult.size());
         Assert.assertTrue(searchResult.size()>0, "Failed Test");
@@ -165,7 +165,6 @@ WebDriver driver;
         {
             System.out.println("- "+el.getAttribute("title"));
         }
-
     }
     @Test (priority = 4)
     public void Search_item_Negative_Scenario() throws InterruptedException {
@@ -177,7 +176,8 @@ WebDriver driver;
         Thread.sleep(5000);
         List<WebElement> searchResult = driver.findElements(page.getItemsElementsAfterSearch());
         System.out.println("Number of Items search result: " + searchResult.size());
-        Assert.assertTrue(searchResult.size()<1, "Failed Test");
+        //Assert.assertTrue(searchResult.size()<1, "Failed Test");
+        Assert.assertEquals(searchResult.size(),0,"Failed Test");
         WebElement alertText = driver.findElement(By.xpath("//*[@class='alert alert-warning']"));
         //alertText.getText();
         System.out.println("Message for 0 result: "+alertText.getText());

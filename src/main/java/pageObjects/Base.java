@@ -8,16 +8,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.List;
 
 public class Base {
-    private WebDriver driver;
+    protected WebDriver driver;
     public Base(WebDriver driver) {
         this.driver = driver;
     }
-
-    public WebDriver chromeDriverConnection(){
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriverv91.exe");
-        driver = new ChromeDriver();
-        return driver;
-    }
+//    public Base() {
+//    }
+//    public WebDriver chromeDriverConnection(){
+//        System.setProperty("webdriver.chrome.driver", "drivers/chromedriverv91.exe");
+//        driver = new ChromeDriver();
+//        driver.manage().window().maximize();
+//        return driver;
+//    }
 
     public WebElement findElement(By locator) {
         return driver.findElement(locator);
