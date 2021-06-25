@@ -22,14 +22,14 @@ public class TestsRestAssured {
     @Test(priority = 10)
     public void Walter_White_Birthday() {
         RestAssured.baseURI = "https://breakingbadapi.com/api";
-        //Response response = given().contentType(ContentType.JSON).get("/characters/1");
-        Response response = given().contentType(ContentType.JSON).get("");
+        Response response = given().contentType(ContentType.JSON).get("/characters/1");
+//        Response response = given().contentType(ContentType.JSON).get("");
 //        JsonPath jsonPathEvaluator = response.jsonPath();
 //        String name = jsonPathEvaluator.get("name");
         JsonPath jsonPath = response.jsonPath();
         String birthday = jsonPath.getString("birthday");
-        response.prettyPrint();
-        // System.out.println("Walter White's Birthday is: "+birthday);
+        //response.prettyPrint();
+        System.out.println("Walter White's Birthday is: "+birthday);
     }
 
     @Test(priority = 11)
@@ -57,7 +57,7 @@ public class TestsRestAssured {
 //        //Response response = given().get("");
 //        ResponseBody body = response.getBody();
 //        response.prettyPrint();
-//        //List<CharactersInformation> returnedArtworks = Arrays.asList(response.getBody().as(CharactersInformation.class));
+//        //List<CharactersInformation> charactersInformationList = Arrays.asList(response.getBody().as(CharactersInformation.class));
 //        List<CharactersInformation> charactersInformationList = Arrays.asList(body.as(CharactersInformation[].class));
 //      //  CharactersInformation responseBody = body.as(CharactersInformation[].class);
 //        CharactersInformation responseBody = body.as(CharactersInformation.class);
