@@ -7,9 +7,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
-public class Base {
+public class FrequentCommands {
     protected WebDriver driver;
-    public Base(WebDriver driver) {
+    public FrequentCommands(WebDriver driver) {
         this.driver = driver;
     }
 //    public Base() {
