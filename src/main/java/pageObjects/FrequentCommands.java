@@ -12,14 +12,6 @@ public class FrequentCommands {
     public FrequentCommands(WebDriver driver) {
         this.driver = driver;
     }
-//    public Base() {
-//    }
-//    public WebDriver chromeDriverConnection(){
-//        System.setProperty("webdriver.chrome.driver", "drivers/chromedriverv91.exe");
-//        driver = new ChromeDriver();
-//        driver.manage().window().maximize();
-//        return driver;
-//    }
 
     public WebElement findElement(By locator) {
         return driver.findElement(locator);

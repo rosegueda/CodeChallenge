@@ -7,19 +7,6 @@ import org.testng.annotations.*;
 
 public class TestsPracticePage extends BrowserManager{
 
-//    WebDriver driver;
-
-//    @BeforeTest
-//    public void beforeTest(){
-//        driver = BrowserManager.getDriver();
-//        driver.get("http://automationpractice.com/index.php");
-//        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//    }
-//    @AfterTest
-//    public void afterMethod(){
-//        driver.quit();
-//    }
-
     @Test(priority = 0)
     public void Add_item_to_shopping_cart() {
         PracticeMainPage pmp = new PracticeMainPage(driver);
