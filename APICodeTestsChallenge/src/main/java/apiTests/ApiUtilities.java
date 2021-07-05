@@ -15,11 +15,12 @@ import static io.restassured.RestAssured.given;
 
 public class ApiUtilities {
     @BeforeTest
-    public void setup(){
+    public void setup() {
         RestAssured.baseURI = "https://breakingbadapi.com";
         RestAssured.basePath = "/api";
     }
-    public List<Integer> CharacterName(String inputName) {
+
+    public List<Integer> GetIDfromCharacterName(String inputName) {
         Response response = given()
                 .contentType(ContentType.JSON)
                 .get("/characters?name=" + inputName)
@@ -37,11 +38,12 @@ public class ApiUtilities {
         return char_id;
 
     }
-    public List<String> GetBirthdaysFromIDs(List<Integer> ids){
+
+    public List<String> GetBirthdaysFromIDs(List<Integer> ids) {
 //        for(int a = 0; a < ids.size(); a++){
 //        }
         List<String> birthdays = new ArrayList<>();
-        for(Integer id : ids){
+        for (Integer id : ids) {
             Response response = given()
                     .contentType(ContentType.JSON)
                     .get("/characters/" + id)
@@ -54,10 +56,11 @@ public class ApiUtilities {
         return birthdays;
     }
 
-    public void NamesAndPortrayed(){
+    public void NamesAndPortrayed() {
         Response response = given().contentType(ContentType.JSON).get("/characters")
                 .then().statusCode(200)
-                .extract().response();;
+                .extract().response();
+        ;
 //        Also works!!: V
 //        Response response = RestAssured.given().get("https://breakingbadapi.com/api/characters");
         Gson gson = new GsonBuilder().create();
@@ -68,4 +71,17 @@ public class ApiUtilities {
             System.out.println("----------------------------------");
         }
     }
+
+    public CharactersInformation[] POJOListCharacters() {
+        Response response = given().contentType(ContentType.JSON).get("/characters")
+                .then().statusCode(200)
+                .extract().response();
+        ;
+//        Also works!!: V
+//        Response response = RestAssured.given().get("https://breakingbadapi.com/api/characters");
+        Gson gson = new GsonBuilder().create();
+        CharactersInformation[] charactersList = gson.fromJson(response.asString(), CharactersInformation[].class);
+        return charactersList;
+    }
+
 }
