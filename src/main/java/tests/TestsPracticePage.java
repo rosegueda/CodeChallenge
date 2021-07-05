@@ -37,7 +37,6 @@ public class TestsPracticePage extends BrowserManager{
     public void Search_item_Positive_Scenario(){
         PracticeMainPage pmp = new PracticeMainPage(driver);
         pmp.searchRandomItemName();
-        //pmp.listItemsFound();
         Assert.assertTrue(pmp.listItemsFound()>0,"Failed Test");
     }
     @Test (priority = 4)

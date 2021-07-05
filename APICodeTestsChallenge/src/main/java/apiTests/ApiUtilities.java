@@ -26,22 +26,14 @@ public class ApiUtilities {
                 .get("/characters?name=" + inputName)
                 .then().statusCode(200)
                 .extract().response();
-        //response.prettyPrint();
         JsonPath jsonPath = response.jsonPath();
         List<Integer> char_id = jsonPath.getList("char_id");
-//        List<String> birthday = jsonPath.getList("birthday");
-//        List<String> name = jsonPath.getList("name");
-
-//        for (int a = 0; a < birthday.size(); a++) {
-//            System.out.println(name.get(a)+"'s Birthday is: " + birthday.get(a));
-//        }
         return char_id;
 
     }
 
     public List<String> GetBirthdaysFromIDs(List<Integer> ids) {
-//        for(int a = 0; a < ids.size(); a++){
-//        }
+
         List<String> birthdays = new ArrayList<>();
         for (Integer id : ids) {
             Response response = given()
@@ -60,9 +52,6 @@ public class ApiUtilities {
         Response response = given().contentType(ContentType.JSON).get("/characters")
                 .then().statusCode(200)
                 .extract().response();
-        ;
-//        Also works!!: V
-//        Response response = RestAssured.given().get("https://breakingbadapi.com/api/characters");
         Gson gson = new GsonBuilder().create();
         CharactersInformation[] charactersList = gson.fromJson(response.asString(), CharactersInformation[].class);
         for (CharactersInformation l : charactersList) {
@@ -76,9 +65,6 @@ public class ApiUtilities {
         Response response = given().contentType(ContentType.JSON).get("/characters")
                 .then().statusCode(200)
                 .extract().response();
-        ;
-//        Also works!!: V
-//        Response response = RestAssured.given().get("https://breakingbadapi.com/api/characters");
         Gson gson = new GsonBuilder().create();
         CharactersInformation[] charactersList = gson.fromJson(response.asString(), CharactersInformation[].class);
         return charactersList;

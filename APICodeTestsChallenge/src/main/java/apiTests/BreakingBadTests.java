@@ -10,8 +10,6 @@ public class BreakingBadTests extends ApiUtilities {
 
     @Test(priority = 0)
     public void Walter_White_Birthday() {
-        //ApiUtilities au = new ApiUtilities();
-        //CharacterName("Walter");
         List <String> Birthdays = GetBirthdaysFromIDs(GetIDfromCharacterName("Walter White"));
         for(String birthday : Birthdays){
             System.out.println("Walter White's birthday is: "+birthday);
@@ -20,7 +18,6 @@ public class BreakingBadTests extends ApiUtilities {
 
     @Test(priority = 1)
     public void characters_information_store_into_POJOModel() {
-        //NamesAndPortrayed();
         for (CharactersInformation l : POJOListCharacters()) {
             System.out.println("Character Name: \"" + l.getName() + "\"");
             System.out.println("Portrayed by: \"" + l.getPortrayed() + "\"");

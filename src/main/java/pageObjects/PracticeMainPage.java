@@ -34,13 +34,9 @@ public class PracticeMainPage extends FrequentCommands {
         By storeInformation = By.xpath("//*[@class='footer-container']//*[@id='block_contact_infos']//li");
 
         public void selectItemfadedSSTS() {
-            //findElement(fadedSSTSImage);
-//            JavascriptExecutor js = (JavascriptExecutor) driver;
-//            js.executeScript("arguments[0].scrollIntoView();", fadedSSTSImage);
+
             Actions action = new Actions(driver);
             action.moveToElement(findElement(fadedSSTSImage)).build().perform();
-//            findElement(addToCartfadedSSTSImage);
-//            action.moveToElement((WebElement) fadedSSTSImage);
             click(addToCartfadedSSTSImage);
         }
         public void closeAndValidateItemAdded() {
@@ -95,15 +91,12 @@ public class PracticeMainPage extends FrequentCommands {
             public int listItemsFound(){
             List<WebElement> searchResult = findElements(itemsElementsAfterSearch);
             System.out.println("Number of Items search result: " + searchResult.size());
-//            Assert.assertTrue(searchResult.size()>0, "Failed Test");
             System.out.println("Item(s) found after search: ");
             if (searchResult.size()>0){
                 for(WebElement el:searchResult)
             {
                 System.out.println("- "+el.getAttribute("title"));
             }} else {
-//                WebElement alertText = driver.findElement(By.xpath("//*[@class='alert alert-warning']"));
-//                System.out.println("Message for 0 result: "+alertText.getText());
                 System.out.println("Message for 0 result: "+findElement(alertTextNoResults).getText());
             }
             return searchResult.size();
@@ -111,9 +104,6 @@ public class PracticeMainPage extends FrequentCommands {
         public void scrollDownAndValidateStoreInformation(){
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].scrollIntoView();", findElement(footerContainer));
-//              Also works with move to element:
-//            Actions action = new Actions(driver);
-//            action.moveToElement(findElement(footerContainer)).build().perform();
             System.out.println("Store Information: ");
             List<WebElement> storeInfo = findElements(storeInformation);
             for(WebElement el:storeInfo)
@@ -122,4 +112,3 @@ public class PracticeMainPage extends FrequentCommands {
             }
         }
     }
-
