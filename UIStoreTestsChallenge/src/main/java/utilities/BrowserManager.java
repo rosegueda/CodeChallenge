@@ -1,4 +1,4 @@
-package start;
+package utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,7 +9,7 @@ public class BrowserManager {
     protected WebDriver driver;
 
     private WebDriver getDriver(){
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriverv91.exe");
+        System.setProperty("webdriver.chrome.driver", "../drivers/chromedriverv91.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         return driver;
@@ -21,7 +21,6 @@ public class BrowserManager {
         driver.get("http://automationpractice.com/index.php");
 
     }
-
     @AfterTest
     public void afterTest(){
         driver.quit();

@@ -1,5 +1,6 @@
-package apiTests;
+package utilities;
 
+import POJOS.CharactersInformation;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import io.restassured.RestAssured;

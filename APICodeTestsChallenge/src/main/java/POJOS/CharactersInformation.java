@@ -1,4 +1,4 @@
-package apiTests;
+package POJOS;
 
 import java.util.List;
 

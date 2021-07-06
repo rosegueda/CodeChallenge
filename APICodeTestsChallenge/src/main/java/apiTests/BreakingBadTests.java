@@ -1,5 +1,7 @@
 package apiTests;
 
+import POJOS.CharactersInformation;
+import utilities.ApiUtilities;
 import org.testng.annotations.Test;
 
 import java.util.List;

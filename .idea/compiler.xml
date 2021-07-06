@@ -7,11 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="APICodeTestsChallenge" />
+        <module name="UIStoreTestsChallenge" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="APIChallenge" target="8" />
       <module name="APICodeChallenge" target="8" />
+      <module name="UICodeTestsChallenge" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
