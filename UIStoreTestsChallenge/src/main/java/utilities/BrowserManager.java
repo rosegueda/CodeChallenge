@@ -21,7 +21,7 @@ public class BrowserManager {
         driver.get("http://automationpractice.com/index.php");
 
     }
-    @AfterTest
+   // @AfterTest
     public void afterTest(){
         driver.quit();
     }

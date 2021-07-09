@@ -71,14 +71,23 @@ public class PracticeMainPage extends FrequentCommands {
             driver.findElement(By.xpath("//*[@id='homefeatured']//a[@data-id-product='"+randomItem+"']")).click();
             System.out.println("random element: "+randomValue);
         }
-        public void searchRandomItemName(){
+        public void searchByItemName(String inputName){
+//            List<WebElement> el = findElements(itemsElements);
+//            Random r = new Random();
+//            int randomValue = r.nextInt(el.size());
+//            String randomElementName = el.get(randomValue).getAttribute("title");
+//            System.out.println("Search Item: "+randomElementName);
+//            type(randomElementName,searchBar);
+            type(inputName,searchBar);
+            click(searchBtn);
+        }
+        public String randomItemName(){
             List<WebElement> el = findElements(itemsElements);
             Random r = new Random();
             int randomValue = r.nextInt(el.size());
             String randomElementName = el.get(randomValue).getAttribute("title");
-            System.out.println("Search Item: "+randomElementName);
-            type(randomElementName,searchBar);
-            click(searchBtn);
+//            System.out.println("Search Item: "+randomElementName);
+            return randomElementName;
         }
 
         public void searchItemWithNoResult(){
@@ -87,6 +96,7 @@ public class PracticeMainPage extends FrequentCommands {
             type(TypedWord,searchBar);
             click(searchBtn);
         }
+
         //public void listItemsFound(){
             public int listItemsFound(){
             List<WebElement> searchResult = findElements(itemsElementsAfterSearch);

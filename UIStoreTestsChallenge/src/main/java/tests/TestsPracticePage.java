@@ -1,6 +1,5 @@
 package tests;
 
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjects.PracticeMainPage;
@@ -32,19 +31,22 @@ public class TestsPracticePage extends BrowserManager{
         pmp.closeAndValidateItemAdded();
         Assert.assertEquals(pmp.cartItemsAddedText(),"Cart 1 Product","Failed Test");
         System.out.println(pmp.cartItemsAddedText());
+
     }
     @Test (priority = 3)
     public void Search_item_Positive_Scenario(){
         PracticeMainPage pmp = new PracticeMainPage(driver);
-        pmp.searchRandomItemName();
+        System.out.println("Search Item: "+pmp.randomItemName());
+        pmp.searchByItemName("Blouse");
         Assert.assertTrue(pmp.listItemsFound()>0,"Failed Test");
     }
     @Test (priority = 4)
     public void Search_item_Negative_Scenario(){
         PracticeMainPage pmp = new PracticeMainPage(driver);
-        pmp.searchItemWithNoResult();
+        pmp.searchByItemName("Ricardo");
         Assert.assertEquals(pmp.listItemsFound(),0,"Failed Test");
     }
+
     @Test (priority = 5)
     public void Validate_store_information(){
         PracticeMainPage pmp = new PracticeMainPage(driver);
