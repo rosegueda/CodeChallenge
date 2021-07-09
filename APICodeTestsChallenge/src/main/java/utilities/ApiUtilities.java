@@ -21,10 +21,10 @@ public class ApiUtilities {
         RestAssured.basePath = "/api";
     }
 
-    public List<Integer> GetIDfromCharacterName(String inputName) {
+    public List<Integer> GetIDfromCharacterName( String parameter, String inputName) {
         Response response = given()
                 .contentType(ContentType.JSON)
-                .get("/characters?name=" + inputName)
+                .get("/characters?"+parameter+"=" + inputName)
                 .then().statusCode(200)
                 .extract().response();
         JsonPath jsonPath = response.jsonPath();

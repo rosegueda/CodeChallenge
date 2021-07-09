@@ -86,7 +86,6 @@ public class PracticeMainPage extends FrequentCommands {
             Random r = new Random();
             int randomValue = r.nextInt(el.size());
             String randomElementName = el.get(randomValue).getAttribute("title");
-//            System.out.println("Search Item: "+randomElementName);
             return randomElementName;
         }
 

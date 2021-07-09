@@ -16,10 +16,8 @@ public class BreakingBadTests extends ApiUtilities {
 
     @Test(priority = 0)
     public void Walter_White_Birthday() {
-        //List <String> Birthdays = GetBirthdaysFromIDs(GetIDfromCharacterName("Walter White"));
-
         List<String> Birthdays = new ArrayList<>();
-        for (Integer id : GetIDfromCharacterName("Walter White")) {
+        for (Integer id : GetIDfromCharacterName("name","Walter White")) {
             Response response = given()
                     .contentType(ContentType.JSON)
                     .get("/characters/" + id)
